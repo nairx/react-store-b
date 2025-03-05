@@ -1,17 +1,8 @@
-import logo from "./logo.svg";
-import "./App.css";
-import Header from "./Header";
-import Main from "./Main";
-import Footer from "./Footer";
-import Login from "./Login"
 function App() {
   return (
     <div>
-      <Header />
-      <Login />
-      <Footer/>
+      <h1>Hello World</h1>
     </div>
   );
 }
-
 export default App;
