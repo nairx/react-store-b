@@ -1,9 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
-
+import logo from "./logo.svg";
+import "./App.css";
+import Header from "./Header";
+import Main from "./Main";
+import Footer from "./Footer";
+import Login from "./Login"
 function App() {
   return (
-    <h1>Hello World</h1>
+    <div>
+      <Header />
+      <Login />
+      <Footer/>
+    </div>
   );
 }
 
