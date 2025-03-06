@@ -1,8 +1,10 @@
-function App() {
+function App(props) {
+  //let name="John"
   return (
-    <div>
-      <h1>Hello World</h1>
-    </div>
+    <>
+      <h1>Hello {props.name}. You are {props.age}</h1>
+      <p>This is a paragraph.</p>
+    </>
   );
 }
 export default App;
