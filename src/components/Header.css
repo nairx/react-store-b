@@ -1,6 +1,6 @@
 .App-Header-Row{
     display: flex;
     justify-content: space-between;
-    background-color: teal;
+    background-color: lightblue;
     padding: 5px;
 }
