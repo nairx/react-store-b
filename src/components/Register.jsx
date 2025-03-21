@@ -1,12 +1,15 @@
 import React from "react";
 import { useState } from "react";
-import "./Register.css"
+import "./Register.css";
 import { Link } from "react-router-dom";
 export default function Register() {
   const [users, setUsers] = useState([]);
   const [user, setUser] = useState({});
   const handleSubmit = () => {
     setUsers([...users, user]);
+  };
+  const handleDelete = (email) => {
+    setUsers(users.filter((value) => value.email != email));
   };
   return (
     <div className="App-Register-Row">
@@ -41,11 +44,13 @@ export default function Register() {
         </p>
       </div>
       <div>
-        {
-          users && users.map((value,index)=>(
-            <li>{value.name}-{value.email}-{value.password}</li>
-          ))
-        }
+        {users &&
+          users.map((value, index) => (
+            <li>
+              {value.name}-{value.email}-{value.password}
+              <button onClick={() => handleDelete(value.email)}>Delete</button>
+            </li>
+          ))}
       </div>
     </div>
   );
