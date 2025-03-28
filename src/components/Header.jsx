@@ -6,13 +6,16 @@ export default function Header() {
   const { user, setUser } = useContext(appContext);
   return (
     <div className="App-Header-Row">
-      <div>React Store[{user.name}]</div>
+      <div>React Store</div>
       <div>
         <Link to="home">Home</Link> |<Link to="cart">Cart</Link> |
         {user.email === "" ? (
           <Link to="login">Login</Link>
         ) : (
-          <Link to="login" onClick={() => setUser({ ...user, email: "" })}>
+          <Link
+            to="login"
+            onClick={() => setUser({ ...user, name: "", email: "" })}
+          >
             Logout
           </Link>
         )}
