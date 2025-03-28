@@ -14,7 +14,9 @@ export default function Header() {
         ) : (
           <Link
             to="login"
-            onClick={() => setUser({ ...user, name: "", email: "" })}
+            onClick={() =>
+              setUser({ ...user, name: "", email: "", password: "" })
+            }
           >
             Logout
           </Link>
