@@ -12,6 +12,7 @@ function App(props) {
   const [users, setUsers] = useState([]);
   const [user, setUser] = useState({});
   const [cart, setCart] = useState({});
+  const PATH = process.env.REACT_APP_PATH
   const products = [
     { id: 1, name: "Product 1", price: 56 },
     { id: 2, name: "Product 2", price: 40 },
@@ -28,8 +29,8 @@ function App(props) {
         <Header />
         <Routes>
           <Route index element={<Products />} />
-          <Route path="home" element={<Products />} />
-          <Route path="cart" element={<Cart />} />
+          <Route path={`${PATH}`} element={<Products />} />
+          <Route path={`${PATH}/cart`} element={<Cart />} />
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
         </Routes>

@@ -4,16 +4,18 @@ import { useContext } from "react";
 import { appContext } from "../App";
 export default function Header() {
   const { user, setUser } = useContext(appContext);
+  const PATH = process.env.REACT_APP_PATH
   return (
     <div className="App-Header-Row">
       <div>React Store</div>
       <div>
-        <Link to="home">Home</Link> |<Link to="cart">Cart</Link> |
+        <Link to={`${PATH}/`}>Home</Link> 
+        |<Link to={`${PATH}/cart`}>Cart</Link> |
         {user.email === "" ? (
-          <Link to="login">Login</Link>
+          <Link to={`${PATH}/login`}>Login</Link>
         ) : (
           <Link
-            to="login"
+            to={`${PATH}/login`}
             onClick={() =>
               setUser({ ...user, name: "", email: "", password: "" })
             }
