@@ -4,7 +4,6 @@ import { appContext } from "../App";
 import { useContext } from "react";
 export default function Products() {
   const { user, products, cart, setCart } = useContext(appContext);
-
   return (
     <>
       <h3>{user.name}</h3>
