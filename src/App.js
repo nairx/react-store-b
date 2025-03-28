@@ -2,7 +2,7 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Cart from "./components/Cart";
 import Login from "./components/Login";
-import Register from "./components/Register"
+import Register from "./components/Register";
 import Products from "./components/Products";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App(props) {

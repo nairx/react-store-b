@@ -4,7 +4,6 @@ export default function Login() {
   return (
     <div>
       <h2>Login Form</h2>
-
       <p>
         <input type="text" placeholder="Email address"></input>
       </p>
