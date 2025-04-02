@@ -5,7 +5,13 @@ import { useContext } from "react";
 export default function Products() {
   const { user, products, cart, setCart } = useContext(appContext);
   const addToCart = (id) => {
-    setCart({ ...cart, [id]: 1 });
+    !cart[id] && setCart({ ...cart, [id]: 1 });
+  };
+  const increment = (id) => {
+    setCart({ ...cart, [id]: cart[id] + 1 });
+  };
+  const decrement = (id) => {
+    setCart({ ...cart, [id]: cart[id] - 1 });
   };
   return (
     <>
@@ -13,9 +19,19 @@ export default function Products() {
       <div className="App-Products-Row">
         {products.map((value, index) => (
           <div key={index} className="App-Products-Box">
+            <img src={value.imgUrl} />
             <h3>{value.name}</h3>
+            <p>{value.desc}</p>
             <h4>{value.price}</h4>
-            <button onClick={() => addToCart(value.id)}>Add to Cart</button>
+            {cart[value.id] > 0 ? (
+              <div>
+                <button onClick={() => decrement(value.id)}>-</button>
+                {cart[value.id]}
+                <button onClick={() => increment(value.id)}>+</button>
+              </div>
+            ) : (
+              <button onClick={() => addToCart(value.id)}>Add to Cart</button>
+            )}
           </div>
         ))}
       </div>
