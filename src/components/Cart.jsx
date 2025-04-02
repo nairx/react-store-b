@@ -57,6 +57,8 @@ export default function Cart() {
           )}
           <h3>Order Value:{orderValue}</h3>
           <p>
+            
+            <button>Login to Order</button>
             <button onClick={placeOrder}>Place Order</button>
           </p>
         </>

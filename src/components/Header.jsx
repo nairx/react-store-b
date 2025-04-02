@@ -13,7 +13,7 @@ export default function Header() {
         <Link to={"/"}>Home</Link>-
         <Link to={"/cart"}>Cart({items.length})</Link>-
         <Link to={"/orders"}>Orders({orders.length})</Link>-
-        {user.email === "" ? (
+        {user.email === "" || (!user.email) ? (
           <Link to={"/login"}>Login</Link>
         ) : (
           <Link
