@@ -37,6 +37,9 @@ export default function Cart() {
           )
       )}
       <h3>Order Value:{orderValue}</h3>
+      <p>
+        <button>Place Order</button>
+      </p>
     </div>
   );
 }

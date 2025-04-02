@@ -10,8 +10,8 @@ export default function Header() {
     <div className="App-Header-Row">
       <div>React Store</div>
       <div>
-        <Link to={"/"}>Home</Link>|
-        <Link to={"/cart"}>Cart({items.length})</Link> |
+        <Link to={"/"}>Home</Link>-
+        <Link to={"/cart"}>Cart({items.length})</Link>-
         {user.email === "" ? (
           <Link to={"/login"}>Login</Link>
         ) : (
