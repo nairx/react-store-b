@@ -3,19 +3,20 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { appContext } from "../App";
 export default function Header() {
-  const { user, setUser } = useContext(appContext);
-  const PATH = process.env.REACT_APP_PATH
+  const { user, setUser, cart, products } = useContext(appContext);
+  const items = products.filter((value) => cart[value.id] > 0);
+  console.log(items);
   return (
     <div className="App-Header-Row">
       <div>React Store</div>
       <div>
-        <Link to={`${PATH}/`}>Home</Link> 
-        |<Link to={`${PATH}/cart`}>Cart</Link> |
+        <Link to={"/"}>Home</Link>|
+        <Link to={"/cart"}>Cart({items.length})</Link> |
         {user.email === "" ? (
-          <Link to={`${PATH}/login`}>Login</Link>
+          <Link to={"/login"}>Login</Link>
         ) : (
           <Link
-            to={`${PATH}/login`}
+            to={"/login"}
             onClick={() =>
               setUser({ ...user, name: "", email: "", password: "" })
             }
