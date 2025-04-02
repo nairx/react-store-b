@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { appContext } from "../App";
 export default function Header() {
-  const { user, setUser, cart, products } = useContext(appContext);
+  const { user, setUser, cart, products,orders } = useContext(appContext);
   const items = products.filter((value) => cart[value.id] > 0);
   console.log(items);
   return (
@@ -12,6 +12,7 @@ export default function Header() {
       <div>
         <Link to={"/"}>Home</Link>-
         <Link to={"/cart"}>Cart({items.length})</Link>-
+        <Link to={"/orders"}>Orders({orders.length})</Link>-
         {user.email === "" ? (
           <Link to={"/login"}>Login</Link>
         ) : (
